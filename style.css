@@ -8,6 +8,32 @@
     font-weight: 500;
 }
 
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+.main > button{
+    padding: 5px 10px;
+    margin: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    align-self: center;
+}
+
+.main > button:hover{
+    border: 2px solid #18a5d0;
+    background-color: #18a5d0;
+    color: white;
+}
+
+.main > button:active{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
+
 #container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(400px,1fr)); 
@@ -27,4 +53,68 @@
 
 p{
     margin-bottom: 10px;
+}
+
+::backdrop{
+    background-color: white;
+    opacity: 0.75;
+}
+
+dialog{
+    align-self: center;
+    justify-self: center;
+    padding: 20px 40px;
+    margin: 15px;
+    border-radius: 10px;
+    width: 450px;
+}
+
+#close-button{
+    padding: 0 10px;
+    margin: 2px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#close-button:hover{
+    border-color: grey;
+    color:grey;
+}
+
+dialog>p{
+    text-align: center;
+    font-size: 25px;
+} 
+
+dialog input{
+    margin: 12px;
+    padding: 5px;
+    border: 2px solid #dadee7;
+    border-radius: 5px;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+}
+
+#form div{
+   place-self: center;
+   margin: 20px;
+}
+
+.submit{
+    padding: 5px 10px;
+    margin: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    width: 200px;
+    place-self: center;
+}
+
+.submit:hover{
+    border-color: grey;
+    color:grey;
 }

@@ -7,7 +7,45 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="container"></div>
+    <div class="main">
+      <button id="btn">ADD NEW BOOK</button>
+      <dialog>
+        <button id="close-button" autofocus>x</button>
+        <p>Add a new book</p>
+        <form action="" method="get" id="form">
+          <input
+            type="text"
+            id="book-title"
+            name="book-title"
+            placeholder="Book title"
+            required
+          />
+          <input
+            type="text"
+            id="book-author"
+            name="book-author"
+            placeholder="Book author"
+            required
+          />
+          <input
+            type="number"
+            id="pages"
+            name="pages"
+            placeholder="Number of pages"
+            required
+          />
+          <div id="selector">
+            <label for="read-status">Have you read the book?</label>
+            <select name="read-status" id="read-status" required>
+              <option value="read">Yes</option>
+              <option value="not read">No</option>
+            </select>
+          </div>
+          <input type="submit" class="submit" />
+        </form>
+      </dialog>
+      <div id="container"></div>
+    </div>
     <script src="javascript.js"></script>
   </body>
 </html>
