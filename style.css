@@ -23,9 +23,8 @@
 }
 
 .main > button:hover{
-    border: 2px solid #18a5d0;
-    background-color: #18a5d0;
-    color: white;
+    border: 2px solid grey;
+    color: grey;
 }
 
 .main > button:active{
@@ -36,7 +35,7 @@
 
 #container{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(400px,1fr)); 
+    grid-template-columns: repeat(auto-fill,minmax(450px,1fr)); 
     gap: 5px;
     overflow: auto;
 }
@@ -44,10 +43,10 @@
 .card{
     padding: 20px 40px;
     margin: 15px;
-    border: 2px solid #18a5d0;
+    border: 2px solid black;
     border-radius: 10px;
-    background-color: #18a5d0;
-    color: white;
+    background-color: white;
+    color: black;
     width: 450px;
     display: flex;
     flex-direction: column;
@@ -57,26 +56,36 @@ p{
     margin-bottom: 10px;
 }
 
-.remove-button{
+.book-title{
+    font-size: 32px;
+}
+
+.read-status{
     padding: 5px 10px;
     margin-top: 10px;
-    border: 2px solid white;
+    border: 2px solid black;
     border-radius: 10px;
-    background-color: #18a5d0;
+    background-color: black;
     color: white;
-    width: 100px;
+    width: 150px;
+    place-self: end;
+}
+
+
+.remove-button{
+    padding: 0 10px;
+    margin: 2px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
     place-self: end;
 }
 
 .remove-button:hover{
-    border-color: #dadee7;
-    color:#dadee7;
+    border-color: grey;
+    color:grey;
 }
 
-.remove-button:active{
-    border-color: white;
-    color:white;
-}
 
 ::backdrop{
     background-color: white;

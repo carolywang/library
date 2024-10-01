@@ -34,33 +34,60 @@ function displayBooks() {
     const bookCard = document.createElement("div");
     bookCard.className = "card";
     document.getElementById("container").appendChild(bookCard);
-    // append book title to card
-    const title = document.createElement("p");
-    title.innerText = `Book: ${book.title}`;
-    bookCard.appendChild(title);
-    // append author name to card
-    const author = document.createElement("p");
-    author.innerText = `Author: ${book.author}`;
-    bookCard.appendChild(author);
-    // append number of pages to card
-    const pages = document.createElement("p");
-    pages.innerText = `Pages: ${book.pages}`;
-    bookCard.appendChild(pages);
-    // append read status to card
-    const readStatus = document.createElement("p");
-    readStatus.innerText = `Read status: ${book.readStatus}`;
-    bookCard.appendChild(readStatus);
+
     // add remove button
     const removeButton = document.createElement("button");
-    removeButton.innerText = "Remove";
+    removeButton.innerText = "x";
     removeButton.className = "remove-button";
     removeButton.id = myLibrary.indexOf(book);
     console.log(removeButton.id);
     bookCard.appendChild(removeButton);
     // add remove button event
     removeButton.addEventListener("click", () => {
-      //   console.log("button clicked");
       return removeBook(removeButton);
+    });
+
+    // append book title to card
+    const title = document.createElement("p");
+    title.className = "book-title";
+    title.innerText = book.title;
+    bookCard.appendChild(title);
+
+    // append author name to card
+    const author = document.createElement("p");
+    author.innerText = `Author: ${book.author}`;
+    bookCard.appendChild(author);
+
+    // append number of pages to card
+    const pages = document.createElement("p");
+    pages.innerText = `Pages: ${book.pages}`;
+    bookCard.appendChild(pages);
+
+    // append read status to card
+    const readStatus = document.createElement("button");
+    readStatus.innerText = book.readStatus;
+    readStatus.className = "read-status";
+    if (readStatus.innerText == "Read") {
+      readStatus.style.backgroundColor = "green";
+      readStatus.style.borderColor = "green";
+    } else {
+      readStatus.style.backgroundColor = "black";
+      readStatus.style.borderColor = "black";
+    }
+    bookCard.appendChild(readStatus);
+    // add read status button event
+    readStatus.addEventListener("click", () => {
+      if (book.readStatus == "Read") {
+        book.readStatus = "Not read";
+        readStatus.innerText = book.readStatus;
+        readStatus.style.backgroundColor = "black";
+        readStatus.style.borderColor = "black";
+      } else {
+        book.readStatus = "Read";
+        readStatus.innerText = book.readStatus;
+        readStatus.style.backgroundColor = "green";
+        readStatus.style.borderColor = "green";
+      }
     });
   }
 }
